@@ -9,9 +9,11 @@
 	<link rel="shortcut icon" type="image/png" href="<?= base_url("images/caribu lingkaran.png") ?>" />
 	<title>Caribu Coffee & Friends</title>
 
+	<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
+			darkMode: 'class',
 			theme: {
 				extend: {
 					colors: {
@@ -70,12 +72,12 @@
 
 					<div class="flex items-center gap-4">
 						<div class="sm:flex sm:gap-4">
-							<a class="rounded-md bg-white px-5 py-2.5 text-sm font-md text-brown shadow active:bg-brown-light font-semibold hover:bg-gray-200 text-center" href="/login">
+							<a class="rounded-md bg-white px-5 py-2.5 text-sm font-md text-brown shadow font-semibold hover:bg-gray-200 text-center focus:ring-4 focus:outline-none focus:ring-blue-200" href="/login">
 								Login
 							</a>
 
 							<div class="hidden sm:flex">
-								<a class="rounded-md bg-brown px-5 py-2.5 text-sm font-md text-white border-white border active:bg-brown-light hover:bg-brown-md" href="/register">
+								<a class="rounded-md bg-brown px-5 py-2.5 text-sm font-md text-white border-white border hover:bg-brown-md focus:ring-4 focus:outline-none focus:ring-blue-200" href="/register">
 									Register
 								</a>
 							</div>

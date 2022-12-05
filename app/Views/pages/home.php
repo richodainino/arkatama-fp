@@ -1,130 +1,293 @@
 <!-- Hero -->
-<section class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
-	<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
+<section id="default-carousel" class="relative" data-carousel="static">
+	<!-- Carousel wrapper -->
+	<div class="relative h-56 overflow-hidden md:h-screen">
+		<!-- Item 1 -->
+		<div class="hidden duration-700 ease-in-out" data-carousel-item>
+			<div class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
+				<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
-	<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-		<div class="max-w-xl text-center sm:text-left">
-			<h1 class="text-3xl font-extrabold sm:text-5xl">
-				Enjoy the finest
+				<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+					<div class="max-w-xl text-center sm:text-left">
+						<h1 class="text-3xl font-extrabold sm:text-5xl">
+							Enjoy the finest
 
-				<strong class="block font-extrabold text-brown">
-					Coffee in Bali.
-				</strong>
-			</h1>
+							<strong class="block font-extrabold text-brown">
+								Coffee in Bali.
+							</strong>
+						</h1>
 
-			<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-				Try our Coffee Latte, created with love and care to give you the best coffee experience.
-			</p>
+						<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+							Try our Coffee Latte, created with love and care to give you the best coffee experience.
+						</p>
 
-			<div class="mt-8 flex flex-wrap gap-4 text-center">
-				<a href="/menu" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring focus:ring-black active:bg-brown-light sm:w-auto font-semibold text-base">
-					Order Now
-				</a>
+
+						<!-- Button -->
+						<div class="mt-8 flex flex-wrap gap-4 text-center">
+							<a href="/menu" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
+								Order now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Item 2 -->
+		<div class="hidden duration-700 ease-in-out" data-carousel-item>
+			<div class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
+				<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
+
+				<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+					<div class="max-w-xl text-center sm:text-left">
+						<h1 class="text-3xl font-extrabold sm:text-5xl">
+							Enjoy the finest
+
+							<strong class="block font-extrabold text-brown">
+								Coffee in Bali.
+							</strong>
+						</h1>
+
+						<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+							Try our Coffee Latte, created with love and care to give you the best coffee experience.
+						</p>
+
+
+						<!-- Button -->
+						<div class="mt-8 flex flex-wrap gap-4 text-center">
+							<a href="/menu" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
+								Order Now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Item 3 -->
+		<div class="hidden duration-700 ease-in-out" data-carousel-item>
+			<div class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
+				<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
+
+				<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+					<div class="max-w-xl text-center sm:text-left">
+						<h1 class="text-3xl font-extrabold sm:text-5xl">
+							Enjoy the finest
+
+							<strong class="block font-extrabold text-brown">
+								Coffee in Bali.
+							</strong>
+						</h1>
+
+						<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+							Try our Coffee Latte, created with love and care to give you the best coffee experience.
+						</p>
+
+
+						<!-- Button -->
+						<div class="mt-8 flex flex-wrap gap-4 text-center">
+							<a href="/menu" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring focus:ring-black active:bg-brown-light sm:w-auto font-semibold text-base">
+								Order Now
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Button -->
-	
+	<!-- Slider indicators -->
+	<div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+		<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+		<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+		<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+	</div>
+
+	<!-- Slider controls -->
+	<button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+		<span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+			<svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+			</svg>
+			<span class="sr-only">Previous</span>
+		</span>
+	</button>
+	<button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+		<span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+			<svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+			</svg>
+			<span class="sr-only">Next</span>
+		</span>
+	</button>
 </section>
 
 <!-- Menu -->
 <section class="bg-white">
-	<div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
-
-		<!--
-  This component uses @tailwindcss/forms
-
-  yarn add @tailwindcss/forms
-  npm install @tailwindcss/forms
-
-  plugins: [require('@tailwindcss/forms')]
--->
-
-		<div class="mx-auto max-w-lg text-center">
-			<h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit
+	<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 smax-w-lg m:py-12 lg:px-8">
+		<div class="grid grid-cols-6 gap-4 h-12">
+			<h2 class="text-2xl font-bold text-brown md:text-3xl col-span-5 inline-flex items-center">
+				Take a Look at Our Menu
 			</h2>
-
-			<p class="hidden text-gray-500 sm:mt-4 sm:block">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor
-				officia blanditiis repellat in, vero, aperiam porro ipsum laboriosam
-				consequuntur exercitationem incidunt tempora nisi?
-			</p>
+			<a href="#" class="inline-flex items-center justify-center px-3 py-2 text-md font-medium text-white bg-brown-md rounded-lg hover:bg-brown focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+				View more
+				<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+				</svg>
+			</a>
 		</div>
 
-		<ul class="grid gap-4 mt-8 sm:grid-cols-3 lg:grid-cols-3">
+		<ul class="grid gap-4 mt-8 sm:grid-cols-1 lg:grid-cols-4 lg:grid-rows-2">
+			<!-- Product 1 -->
 			<li>
-				<a href="#" class="block overflow-hidden group">
-					<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-					<div class="relative pt-3 bg-white">
-						<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-							Basic Tee
-						</h3>
-
-						<p class="mt-2">
-							<span class="sr-only"> Regular Price </span>
-
-							<span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-						</p>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
 					</div>
-				</a>
+				</div>
 			</li>
 
+			<!-- Product 2 -->
 			<li>
-				<a href="#" class="block overflow-hidden group">
-					<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-					<div class="relative pt-3 bg-white">
-						<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-							Basic Tee
-						</h3>
-
-						<p class="mt-2">
-							<span class="sr-only"> Regular Price </span>
-
-							<span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-						</p>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
 					</div>
-				</a>
+				</div>
 			</li>
 
+			<!-- Product 3 -->
 			<li>
-				<a href="#" class="block overflow-hidden group">
-					<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]" />
-
-					<div class="relative pt-3 bg-white">
-						<h3 class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-							Basic Tee
-						</h3>
-
-						<p class="mt-2">
-							<span class="sr-only"> Regular Price </span>
-
-							<span class="tracking-wider text-gray-900"> £24.00 GBP </span>
-						</p>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
 					</div>
-				</a>
+				</div>
+			</li>
+
+			<!-- Product 4 -->
+			<li>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
+					</div>
+				</div>
+			</li>
+
+			<!-- Product 5 -->
+			<li>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
+					</div>
+				</div>
+			</li>
+
+			<!-- Product 6 -->
+			<li>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
+					</div>
+				</div>
+			</li>
+
+			<!-- Product 7 -->
+			<li>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
+					</div>
+				</div>
+			</li>
+
+			<!-- Product 8 -->
+			<li>
+				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
+					</a>
+					<div class="p-5">
+						<a href="#">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
+						</a>
+						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
+					</div>
+				</div>
 			</li>
 		</ul>
+	</div>
+</section>
 
-		<div class="mx-auto mt-8 max-w-xl">
-			<form action="#" class="sm:flex sm:gap-4">
-				<div class="sm:flex-1">
-					<label for="email" class="sr-only">Email</label>
-
-					<input type="email" placeholder="Email address" class="w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-black" />
+<!-- Reservation -->
+<section class="bg-white">
+	<div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+		<div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+			<div class="relative z-10 lg:py-16">
+				<div class="relative h-64 sm:h-80 lg:h-full">
+					<img alt="House" src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" class="absolute inset-0 h-full w-full object-cover" />
 				</div>
+			</div>
 
-				<button type="submit" class="group mt-4 flex w-full items-center justify-center rounded-md bg-brown-md px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-black sm:mt-0 sm:w-auto hover:bg-brown active:bg-brown-light">
-					<span class="text-sm font-medium"> Sign Up </span>
+			<div class="relative flex items-center bg-gray-100">
+				<span class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
 
-					<svg class="ml-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-					</svg>
-				</button>
-			</form>
+				<div class="p-8 sm:p-16 lg:p-24">
+					<h2 class="text-2xl font-bold sm:text-3xl text-brown">
+						Caribu Coffee & Friends
+					</h2>
+
+					<p class="mt-4 text-gray-600 font-medium">
+						We serve reservations for events such as birthdays, farewells, graduations, and other celebrations!
+					</p>
+
+					<a href="https://wa.me/62811385155" class="mt-8 inline-block rounded-lg bg-brown-md px-12 py-3 text-sm font-medium text-white hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300">
+						Get in touch
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
