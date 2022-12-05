@@ -1,3 +1,4 @@
+<!-- Hero -->
 <section class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
 	<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
@@ -22,8 +23,12 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Button -->
+	
 </section>
 
+<!-- Menu -->
 <section class="bg-white">
 	<div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
 
