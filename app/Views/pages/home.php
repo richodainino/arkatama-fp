@@ -3,7 +3,7 @@
 	<!-- Carousel wrapper -->
 	<div class="relative h-56 overflow-hidden md:h-screen">
 		<!-- Item 1 -->
-		<div class="hidden duration-700 ease-in-out" data-carousel-item>
+		<div class="hidden duration-1000 ease-in-out" data-carousel-item>
 			<div class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
 				<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
@@ -36,7 +36,7 @@
 		<!-- Item 2 -->
 		<?php if (!empty($hero) && is_array($hero)) : ?>
 			<?php foreach ($hero as $hero_item) : ?>
-				<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				<div class="hidden duration-1000 ease-in-out" data-carousel-item>
 					<div class="relative bg-[url(<?= esc($hero_item['image']) ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
 						<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
@@ -47,13 +47,13 @@
 								</h1>
 
 								<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-									<?= $hero_item['desc'] ?>
+									<?= esc($hero_item['desc']) ?>
 								</p>
 
 								<!-- Button -->
 								<div class="mt-8 flex flex-wrap gap-4 text-center">
-									<a href="<?= $hero_item['cta_ref'] ?>" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
-										<?= $hero_item['cta_title'] ?>
+									<a href="<?= esc($hero_item['cta_ref'], 'url') ?>" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
+										<?= esc($hero_item['cta_title']) ?>
 									</a>
 								</div>
 							</div>
@@ -70,8 +70,11 @@
 	<!-- Slider indicators -->
 	<div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
 		<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-		<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-		<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+		<?php if (!empty($hero) && is_array($hero)) : ?>
+			<?php foreach ($hero as $key => $hero_item) : ?>
+				<button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide <?= $key + 2 ?>" data-carousel-slide-to="<?= $key + 1 ?>"></button>
+			<?php endforeach ?>
+		<?php endif ?>
 	</div>
 
 	<!-- Slider controls -->
