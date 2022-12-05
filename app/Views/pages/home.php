@@ -34,66 +34,37 @@
 		</div>
 
 		<!-- Item 2 -->
-		<div class="hidden duration-700 ease-in-out" data-carousel-item>
-			<div class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
-				<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
+		<?php if (!empty($hero) && is_array($hero)) : ?>
+			<?php foreach ($hero as $hero_item) : ?>
+				<div class="hidden duration-700 ease-in-out" data-carousel-item>
+					<div class="relative bg-[url(<?= esc($hero_item['image']) ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
+						<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
-				<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-					<div class="max-w-xl text-center sm:text-left">
-						<h1 class="text-3xl font-extrabold sm:text-5xl">
-							Enjoy the finest
+						<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+							<div class="max-w-xl text-center sm:text-left">
+								<h1 class="text-3xl font-extrabold sm:text-5xl">
+									<?= $hero_item['title'] ?>
+								</h1>
 
-							<strong class="block font-extrabold text-brown">
-								Coffee in Bali.
-							</strong>
-						</h1>
+								<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
+									<?= $hero_item['desc'] ?>
+								</p>
 
-						<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-							Try our Coffee Latte, created with love and care to give you the best coffee experience.
-						</p>
-
-
-						<!-- Button -->
-						<div class="mt-8 flex flex-wrap gap-4 text-center">
-							<a href="/menu" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
-								Order Now
-							</a>
+								<!-- Button -->
+								<div class="mt-8 flex flex-wrap gap-4 text-center">
+									<a href="<?= $hero_item['cta_ref'] ?>" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
+										<?= $hero_item['cta_title'] ?>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-
-		<!-- Item 3 -->
-		<div class="hidden duration-700 ease-in-out" data-carousel-item>
-			<div class="relative bg-[url(<?= base_url("images/foto latte.jpg") ?>)] bg-cover bg-center bg-no-repeat bg-left-bottom bg-110%">
-				<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
-
-				<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-					<div class="max-w-xl text-center sm:text-left">
-						<h1 class="text-3xl font-extrabold sm:text-5xl">
-							Enjoy the finest
-
-							<strong class="block font-extrabold text-brown">
-								Coffee in Bali.
-							</strong>
-						</h1>
-
-						<p class="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-							Try our Coffee Latte, created with love and care to give you the best coffee experience.
-						</p>
-
-
-						<!-- Button -->
-						<div class="mt-8 flex flex-wrap gap-4 text-center">
-							<a href="/menu" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring focus:ring-black active:bg-brown-light sm:w-auto font-semibold text-base">
-								Order Now
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			<?php endforeach ?>
+		<?php else : ?>
+			<h3>No Hero</h3>
+			<p>Unable to find any hero.</p>
+		<?php endif ?>
 	</div>
 
 	<!-- Slider indicators -->
