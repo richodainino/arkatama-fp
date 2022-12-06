@@ -40,7 +40,7 @@
 				<br />
 
 				Created with ♥️ by using
-				<a href="https://github.com/richodainino/arkatama-fp" class="text-gray-700 underline transition hover:text-gray-700/75">CodeIgniter 4</a>.
+				<a href="https://github.com/richodainino/arkatama-fp" target="_blank" class="text-gray-700 underline transition hover:text-gray-700/75">CodeIgniter 4</a>.
 			</p>
 		</div>
 	</div>
