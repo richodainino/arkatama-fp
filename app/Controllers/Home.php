@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\HeroModel;
+use App\Models\ProductModel;
 
 class Home extends BaseController
 {
@@ -10,14 +11,9 @@ class Home extends BaseController
     {
         $model = model(HeroModel::class);
 
-        $hero = $model->getHero();
-
-        $filteredHero = array_filter(
-            $hero, 
-            fn ($obj) => isset($obj['status']) && $obj['status'] === 'approved'
-        );
-
-        $data['hero'] = $filteredHero;
+        $productModel = model(ProductModel::class);
+        $product = $productModel->getProductWithLimit(8, 'available');
+        $data['product'] = $product;
 
         return view('templates/header', $data)
             . view('pages/home')

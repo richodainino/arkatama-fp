@@ -59,143 +59,41 @@
 <?php endif ?>
 
 <!-- Menu -->
-<section class="bg-white">
-	<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 smax-w-lg m:py-12 lg:px-8">
-		<div class="grid grid-cols-6 gap-4 h-12">
-			<h2 class="text-2xl font-bold text-brown md:text-3xl col-span-5 inline-flex items-center">
-				Take a Look at Our Menu
-			</h2>
-			<a href="#" class="inline-flex items-center justify-center px-3 py-2 text-md font-medium text-white bg-brown-md rounded-lg hover:bg-brown focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-				View more
-				<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-				</svg>
-			</a>
+<?php if (!empty($product) && is_array($product)) : ?>
+	<section class="bg-white">
+		<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 smax-w-lg m:py-12 lg:px-8">
+			<div class="grid grid-cols-6 gap-4 h-12">
+				<h2 class="text-2xl font-bold text-brown md:text-3xl col-span-5 inline-flex items-center">
+					Take a Look at Our Menu
+				</h2>
+				<a href="/menu" class="inline-flex items-center justify-center px-3 py-2 text-md font-medium text-white bg-brown-md rounded-lg hover:bg-brown focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+					View more
+					<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+					</svg>
+				</a>
+			</div>
+
+			<ul class="grid gap-4 mt-8 sm:grid-cols-1 lg:grid-cols-4 lg:grid-rows-2">
+				<?php foreach ($product as $product_item) : ?>
+					<li>
+						<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+							<a href="/menu/<?= esc($product_item['id']) ?>">
+								<img class="rounded-t-lg" src="<?= esc($product_item['image']) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
+							</a>
+							<div class="p-5">
+								<a href="/menu/<?= esc($product_item['id']) ?>">
+									<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white"><?= esc($product_item['name']) ?></h5>
+								</a>
+								<p class="mb-3 font-normal text-xl">Rp. <?= number_format($product_item['price'], 0, ',', '.') ?></p>
+							</div>
+						</div>
+					</li>
+				<?php endforeach ?>
+			</ul>
 		</div>
-
-		<ul class="grid gap-4 mt-8 sm:grid-cols-1 lg:grid-cols-4 lg:grid-rows-2">
-			<!-- Product 1 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 2 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 3 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 4 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 5 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 6 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 7 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Product 8 -->
-			<li>
-				<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img class="rounded-t-lg" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" />
-					</a>
-					<div class="p-5">
-						<a href="#">
-							<h5 class="mb-2 text-2xl font-bold tracking-tight text-brown dark:text-white">Coffee Latte</h5>
-						</a>
-						<p class="mb-3 font-normal text-xl">Rp. 20.000</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
-</section>
+	</section>
+<?php endif ?>
 
 <!-- Reservation -->
 <section class="bg-white">
