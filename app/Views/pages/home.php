@@ -20,7 +20,7 @@
 
 								<!-- Button -->
 								<div class="mt-8 flex flex-wrap gap-4 text-center">
-									<a href="<?= esc($hero_item['cta_ref'], 'url') ?>" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
+									<a href="<?= esc($hero_item['cta_ref']) ?>" class="block w-full rounded-full bg-brown-md px-12 py-3 text-sm font-md text-white shadow hover:bg-brown focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto font-semibold text-base">
 										<?= esc($hero_item['cta_title']) ?>
 									</a>
 								</div>
