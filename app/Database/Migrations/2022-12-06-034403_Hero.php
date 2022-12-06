@@ -15,6 +15,11 @@ class Hero extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'status' => [
+                'type'       => 'ENUM',
+                'constraint' => ['approved', 'waiting', 'not approved'],
+                'default' => 'waiting'
+            ],
             'title' => [
                 'type'       => 'TEXT',
             ],
