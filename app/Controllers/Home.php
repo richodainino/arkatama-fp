@@ -10,7 +10,14 @@ class Home extends BaseController
     {
         $model = model(HeroModel::class);
 
-        $data['hero'] = $model->getHero();
+        $hero = $model->getHero();
+
+        $filteredHero = array_filter(
+            $hero, 
+            fn ($obj) => isset($obj['status']) && $obj['status'] === 'approved'
+        );
+
+        $data['hero'] = $filteredHero;
 
         return view('templates/header', $data)
             . view('pages/home')
