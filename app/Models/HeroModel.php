@@ -8,8 +8,12 @@ class HeroModel extends Model
 {
     protected $table = 'hero';
 
-    public function getHero()
+    public function getHero($status = false)
     {
-        return $this->findAll();
+        if ($status === false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['status' => $status])->findAll();
     }
 }

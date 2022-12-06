@@ -9,7 +9,9 @@ class Home extends BaseController
 {
     public function index()
     {
-        $model = model(HeroModel::class);
+        $heroModel = model(HeroModel::class);
+        $hero = $heroModel->getHero('approved');
+        $data['hero'] = $hero;
 
         $productModel = model(ProductModel::class);
         $product = $productModel->getProductWithLimit(8, 'available');
