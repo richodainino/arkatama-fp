@@ -18,6 +18,7 @@ class Home extends BaseController
         $data['product'] = $product;
 
         return view('templates/header', $data)
+            . view('templates/navbar')
             . view('pages/home')
             . view('templates/footer')
             . view('templates/tail');
