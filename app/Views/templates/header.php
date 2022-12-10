@@ -10,7 +10,7 @@
 	<title>Caribu Coffee & Friends</title>
 
 	<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
-	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.tailwindcss.com/?plugins=forms"></script>
 	<script>
 		tailwind.config = {
 			darkMode: 'class',
