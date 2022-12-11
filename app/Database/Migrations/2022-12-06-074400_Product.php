@@ -17,12 +17,12 @@ class Product extends Migration
             ],
             'category' => [
                 'type'       => 'ENUM',
-                'constraint' => ['main course', 'dessert', 'snack', 'coffee', 'non-coffee', 'flavored tea'],
+                'constraint' => ['Main Course', 'Dessert', 'Snack', 'Coffee', 'Non-Coffee', 'Flavored Tea'],
             ],
             'status' => [
                 'type'       => 'ENUM',
-                'constraint' => ['available', 'out of stock'],
-                'default' => 'available',
+                'constraint' => ['Available', 'Out of Stock'],
+                'default' => 'Available',
             ],
             'name' => [
                 'type'       => 'VARCHAR',
