@@ -33,6 +33,14 @@ class Admin extends BaseController
             . view('templates/tail');
     }
 
+    public function newProduct()
+    {
+        return view('templates/header')
+            . view('templates/admin/sidebar')
+            . view('pages/admin/newProduct')
+            . view('templates/tail');
+    }
+
     public function productByID($id)
     {
         $productModel = model(ProductModel::class);
@@ -41,9 +49,9 @@ class Admin extends BaseController
         $data['selected'] = 'product';
 
         return view('templates/header', $data)
-        . view('templates/admin/sidebar')
-        . view('pages/admin/productByID')
-        . view('templates/tail');
+            . view('templates/admin/sidebar')
+            . view('pages/admin/productByID')
+            . view('templates/tail');
     }
 
     public function hero()
@@ -59,6 +67,14 @@ class Admin extends BaseController
             . view('templates/tail');
     }
 
+    public function newHero()
+    {
+        return view('templates/header')
+        . view('templates/admin/sidebar')
+        . view('pages/admin/newHero')
+        . view('templates/tail');
+    }
+
     public function heroByID($id)
     {
         $heroModel = model(ProductModel::class);
@@ -67,8 +83,8 @@ class Admin extends BaseController
         $data['selected'] = 'hero';
 
         return view('templates/header', $data)
-        . view('templates/admin/sidebar')
-        . view('pages/admin/heroByID')
-        . view('templates/tail');
+            . view('templates/admin/sidebar')
+            . view('pages/admin/heroByID')
+            . view('templates/tail');
     }
 }
