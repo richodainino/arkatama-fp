@@ -1,0 +1,2 @@
+new hero
+</section>
