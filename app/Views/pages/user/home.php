@@ -8,7 +8,7 @@
 					<div class="relative bg-[url(<?= esc($hero_item['image']) ?>)] bg-cover bg-center bg-no-repeat">
 						<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
-						<div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+						<div class="relative mx-auto max-w-screen-xl px-8 py-32 sm:px-12 lg:flex lg:h-screen lg:items-center lg:px-16">
 							<div class="max-w-xl text-center sm:text-left">
 								<h1 class="text-3xl font-extrabold sm:text-5xl">
 									<?= $hero_item['title'] ?>
@@ -40,16 +40,16 @@
 
 		<!-- Slider controls -->
 		<button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-			<span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-				<svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-black/30 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 group-focus:ring-1 group-focus:ring-black dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+				<svg aria-hidden="true" class="w-5 h-5 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
 				</svg>
 				<span class="sr-only">Previous</span>
 			</span>
 		</button>
 		<button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-			<span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-				<svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-black/30 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 group-focus:ring-1 group-focus:ring-black dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+				<svg aria-hidden="true" class="w-5 h-5 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 				</svg>
 				<span class="sr-only">Next</span>
@@ -79,7 +79,7 @@
 					<li>
 						<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
 							<a href="/menu/<?= esc($product_item['id']) ?>">
-								<img class="rounded-t-lg" src="<?= esc($product_item['image']) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
+								<img class="rounded-t-lg" src="<?= base_url("images/uploads/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
 							</a>
 							<div class="p-5">
 								<a href="/menu/<?= esc($product_item['id']) ?>">
