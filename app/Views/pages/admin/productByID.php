@@ -1,14 +1,34 @@
 <?php if (!empty($product)) : ?>
     <section class="col-span-3 bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8 h-full">
         <div class="w-2/3">
-            <header class="mb-6">
-                <h2 class="text-xl font-bold text-brown sm:text-3xl">
-                    Edit Product
-                </h2>
-            </header>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="flex place-content-between">
+                    <header class="mb-6">
+                        <h2 class="text-xl font-bold text-brown sm:text-3xl">
+                            Edit Product
+                        </h2>
+                    </header>
 
-            <div class="rounded-lg">
-                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="text-center flex flex-row gap-4">
+                        <div>
+                            <input <?php if ($product['status'] === 'Approved') echo ('checked') ?> type="radio" name="status" value="Approved" id="approved" class="peer hidden" />
+
+                            <label for="approved" class="block cursor-pointer rounded-lg border border-green-100 p-2 text-sm font-medium shadow-sm hover:border-green-200 peer-checked:border-green-500 peer-checked:ring-1 peer-checked:ring-green-500 peer-checked:bg-green-100">
+                                <p class="text-green-700">Approved</p>
+                            </label>
+                        </div>
+
+                        <div>
+                            <input <?php if ($product['status'] === 'Not Approved') echo ('checked') ?> type="radio" name="status" value="Not Approved" id="not-approved" class="peer hidden" />
+
+                            <label for="not-approved" class="block cursor-pointer rounded-lg border border-red-100 p-2 text-sm font-medium shadow-sm hover:border-red-200 peer-checked:border-red-500 peer-checked:ring-1 peer-checked:ring-red-500 peer-checked:bg-red-100">
+                                <p class="text-red-700">Not Approved</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-lg">
                     <div class="grid grid-cols-5 gap-4 mb-4">
                         <!-- Category -->
                         <div class="w-full">
@@ -41,10 +61,10 @@
                         <textarea class="w-full rounded-lg border-gray-200 p-3 text-sm" name="desc" placeholder="Description" rows="3" id="description"><?= esc($product['desc']) ?></textarea>
                     </div>
 
-                    <!-- Status -->
+                    <!-- Stock -->
                     <div class="text-center flex flex-row gap-4 mb-6">
                         <div>
-                            <input <?php if ($product['status'] === 'Available') echo ('checked') ?> type="radio" name="status" value="Available" id="available" class="peer hidden" />
+                            <input <?php if ($product['stock'] === 'Available') echo ('checked') ?> type="radio" name="stock" value="Available" id="available" class="peer hidden" />
 
                             <label for="available" class="block cursor-pointer rounded-lg border border-gray-100 p-4 text-sm font-medium shadow-sm hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500">
                                 <p class="text-gray-700">Available</p>
@@ -52,7 +72,7 @@
                         </div>
 
                         <div>
-                            <input <?php if ($product['status'] === 'Out of Stock') echo ('checked') ?> type="radio" name="status" value="Out of Stock" id="out-of-stock" class="peer hidden" />
+                            <input <?php if ($product['stock'] === 'Out of Stock') echo ('checked') ?> type="radio" name="stock" value="Out of Stock" id="out-of-stock" class="peer hidden" />
 
                             <label for="out-of-stock" class="block cursor-pointer rounded-lg border border-gray-100 p-4 text-sm font-medium shadow-sm hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500">
                                 <p class="text-gray-700">Out of Stock</p>
@@ -82,8 +102,8 @@
                             Delete Product
                         </a>
                     </div>
-                </form>
-            </div>
+            </form>
+        </div>
         </div>
     </section>
 <?php endif ?>

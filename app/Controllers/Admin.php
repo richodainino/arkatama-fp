@@ -55,7 +55,7 @@ class Admin extends BaseController
             'price' => 'required',
             'desc' => 'required',
             'category' => 'required',
-            'status' => 'required',
+            'stock' => 'required',
         ]);
         $isDataValid = $validation->withRequest($reqBody)->run();
 
@@ -68,19 +68,21 @@ class Admin extends BaseController
                 @unlink($path . $image);
                 $imageUpload->move(WRITEPATH . $path);
                 $data = array(
+                    'status' => empty($this->request->getPost('status')) ? $product['status'] : $this->request->getPost('status'),
                     'category' => $this->request->getPost('category'),
                     'name'  => $this->request->getPost('name'),
                     'price' => $this->request->getPost('price'),
-                    'status' => $this->request->getPost('status'),
+                    'stock' => $this->request->getPost('stock'),
                     'desc' => $this->request->getPost('desc'),
                     'image' => $imageUpload->getName(),
                 );
             } else {
                 $data = array(
+                    'status' => empty($this->request->getPost('status')) ? $product['status'] : $this->request->getPost('status'),
                     'category' => $this->request->getPost('category'),
                     'name'  => $this->request->getPost('name'),
                     'price' => $this->request->getPost('price'),
-                    'status' => $this->request->getPost('status'),
+                    'stock' => $this->request->getPost('stock'),
                     'desc' => $this->request->getPost('desc')
                 );
             }

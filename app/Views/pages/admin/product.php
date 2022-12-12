@@ -29,6 +29,15 @@
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                             <div class="flex items-center gap-2">
+                                Image
+
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            <div class="flex items-center gap-2">
                                 Name
 
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
@@ -55,6 +64,9 @@
                             </div>
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            Stock
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
                             Status
                         </th>
                         <th class="whitespace-nowrap"></th>
@@ -69,18 +81,36 @@
                                     <?= esc($product_item['id']) ?>
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                                    <img src="<?= base_url("images/uploads/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" class="h-16 object-cover transition duration-500 group-hover:scale-105" />
+                                </td>
+                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">
                                     <?= esc($product_item['name']) ?>
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= esc($product_item['category']) ?></td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">Rp. <?= number_format($product_item['price'], 0, ',', '.') ?></td>
                                 <td class="whitespace-nowrap px-4 py-2">
-                                    <?php if ($product_item['status'] === 'Out of Stock') : ?>
-                                        <strong class="rounded bg-red-100 px-3 py-1.5 text-xs font-medium text-red-700">
+                                    <?php if ($product_item['stock'] === 'Out of Stock') : ?>
+                                        <strong class="rounded border border-red-100 px-3 py-1.5 text-xs font-medium text-red-700">
                                             Out of Stock
                                         </strong>
-                                    <?php elseif ($product_item['status'] === 'Available') : ?>
-                                        <strong class="rounded bg-green-100 px-3 py-1.5 text-xs font-medium text-green-700">
+                                    <?php elseif ($product_item['stock'] === 'Available') : ?>
+                                        <strong class="rounded border border-green-100 px-3 py-1.5 text-xs font-medium text-green-700">
                                             Available
+                                        </strong>
+                                    <?php endif ?>
+                                </td>
+                                <td class="whitespace-nowrap px-4 py-2">
+                                    <?php if ($product_item['status'] === 'Not Approved') : ?>
+                                        <strong class="rounded bg-red-100 px-3 py-1.5 text-xs font-medium text-red-700">
+                                            Not Approved
+                                        </strong>
+                                    <?php elseif ($product_item['status'] === 'Approved') : ?>
+                                        <strong class="rounded bg-green-100 px-3 py-1.5 text-xs font-medium text-green-700">
+                                            Approved
+                                        </strong>
+                                    <?php else : ?>
+                                        <strong class="rounded bg-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700">
+                                            Waiting
                                         </strong>
                                     <?php endif ?>
                                 </td>
