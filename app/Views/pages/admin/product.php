@@ -86,7 +86,7 @@
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2">
                                     <span class="inline-flex divide-x overflow-hidden rounded-md border bg-white shadow-sm">
-                                        <a class="inline-block p-3 text-gray-700 hover:bg-gray-100 focus:relative" title="Edit Product" href="/admin/product/<?= esc($product_item['id']) ?>">
+                                        <a class="inline-block p-3 text-gray-700 hover:bg-gray-100 focus:relative" title="Edit Product" href="/admin/product/<?= esc($product_item['id']) ?>/update">
                                             Edit Product
                                         </a>
                                     </span>

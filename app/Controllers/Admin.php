@@ -41,12 +41,52 @@ class Admin extends BaseController
             . view('templates/tail');
     }
 
-    public function productByID($id)
+    public function updateProduct($id)
     {
         $productModel = model(ProductModel::class);
         $product = $productModel->getProduct($id);
         $data['product'] = $product;
         $data['selected'] = 'product';
+        $reqBody = $this->request;
+
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'name' => 'required',
+            'price' => 'required',
+            'desc' => 'required',
+            'category' => 'required',
+            'status' => 'required',
+        ]);
+        $isDataValid = $validation->withRequest($reqBody)->run();
+
+        if ($isDataValid) {
+            $imageUpload = $this->request->getFile('image');
+
+            if ($imageUpload->isValid()) {
+                $path = '../public/images/uploads';
+                $image = $product["image"];
+                @unlink($path . $image);
+                $imageUpload->move(WRITEPATH . $path);
+                $data = array(
+                    'category' => $this->request->getPost('category'),
+                    'name'  => $this->request->getPost('name'),
+                    'price' => $this->request->getPost('price'),
+                    'status' => $this->request->getPost('status'),
+                    'desc' => $this->request->getPost('desc'),
+                    'image' => $imageUpload->getName(),
+                );
+            } else {
+                $data = array(
+                    'category' => $this->request->getPost('category'),
+                    'name'  => $this->request->getPost('name'),
+                    'price' => $this->request->getPost('price'),
+                    'status' => $this->request->getPost('status'),
+                    'desc' => $this->request->getPost('desc')
+                );
+            }
+            $productModel->updateProduct($id, $data);
+            return redirect('admin/product');
+        }
 
         return view('templates/header', $data)
             . view('templates/admin/sidebar')

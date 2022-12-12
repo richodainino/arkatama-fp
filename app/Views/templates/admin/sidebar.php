@@ -3,7 +3,7 @@
     <div class="flex flex-col justify-between border-r bg-white">
         <div class="sticky top-0 px-4">
             <div class="flex justify-center text-brown">
-                <a href="/admin/dashboard"><img class="h-36" src="<?= base_url("images/caribu coklat.png") ?>"></a>
+                <a href="/"><img class="h-36" src="<?= base_url("images/caribu coklat.png") ?>"></a>
             </div>
 
             <nav aria-label="Main Nav" class="flex flex-col space-y-1">
