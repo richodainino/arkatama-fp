@@ -10,7 +10,7 @@ class Hero extends Seeder
     {
         $hero_data = [
             [
-                'status' => 'approved',
+                'status' => 'Approved',
                 'title' => 'Enjoy the finest
 
 							<strong class="block font-extrabold text-brown">
@@ -22,7 +22,7 @@ class Hero extends Seeder
                 'image' => 'https://images.unsplash.com/photo-1571658734974-e513dfb8b86b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80',
             ],
             [
-                'status' => 'approved',
+                'status' => 'Approved',
                 'title' => 'Prawn Salted Egg',
                 'desc' => 'Fresh prawn with an eggcellent flavor of a salted egg.',
                 'cta_title' => 'Try me',
@@ -30,7 +30,7 @@ class Hero extends Seeder
                 'image' => 'https://images.unsplash.com/photo-1504309250229-4f08315f3b5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
             ],
             [
-                'status' => 'approved',
+                'status' => 'Approved',
                 'title' => 'Want Some Matcha Latte?',
                 'desc'    => 'We got a delicious and beautiful matcha latte that you can enjoy with every sip of it.',
                 'cta_title' => 'Order me',

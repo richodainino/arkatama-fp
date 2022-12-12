@@ -17,8 +17,8 @@ class Hero extends Migration
             ],
             'status' => [
                 'type'       => 'ENUM',
-                'constraint' => ['approved', 'waiting', 'not approved'],
-                'default' => 'waiting'
+                'constraint' => ['Approved', 'Waiting', 'Not Approved'],
+                'default' => 'Waiting'
             ],
             'title' => [
                 'type'       => 'TEXT',
