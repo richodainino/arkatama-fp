@@ -15,11 +15,16 @@ class Product extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'status' => [
+                'type'       => 'ENUM',
+                'constraint' => ['Waiting', 'Not Approved', 'Approved'],
+                'default' => 'Waiting',
+            ],
             'category' => [
                 'type'       => 'ENUM',
                 'constraint' => ['Main Course', 'Dessert', 'Snack', 'Coffee', 'Non-Coffee', 'Flavored Tea'],
             ],
-            'status' => [
+            'stock' => [
                 'type'       => 'ENUM',
                 'constraint' => ['Available', 'Out of Stock'],
                 'default' => 'Available',
