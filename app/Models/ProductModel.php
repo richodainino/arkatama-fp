@@ -34,13 +34,13 @@ class ProductModel extends Model
         return $this->where(['id' => $id])->first();
     }
 
-    public function getProductWithLimit($amount, $status = false)
+    public function getProductWithLimit($amount, $stock = false, $status = false)
     {
-        if ($status === false) {
+        if ($stock === false && $status === false) {
             return $this->findAll($amount);
         }
 
-        return $this->where(['status' => $status])->findAll($amount);
+        return $this->where(['stock' => $stock])->where(['status' => $status])->findAll($amount);
     }
 
     public function updateProduct($id, $data)

@@ -14,7 +14,7 @@ class Home extends BaseController
         $data['hero'] = $hero;
 
         $productModel = model(ProductModel::class);
-        $product = $productModel->getProductWithLimit(8, 'available');
+        $product = $productModel->getProductWithLimit(8, 'available', 'approved');
         $data['product'] = $product;
 
         return view('templates/header', $data)
