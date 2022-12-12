@@ -39,7 +39,7 @@ class Product extends Seeder
                 'name' => 'Latte 2',
                 'desc'  => 'Coffee latte with beautiful latte art.',
                 'price' => 15000,
-                'image' => 'latte.webp',
+                'image' => 'latte 2.webp',
             ],
             [
                 'category' => 'Main Course',
@@ -47,7 +47,7 @@ class Product extends Seeder
                 'name' => 'Prawn Salted Egg 2',
                 'desc'  => 'Fried prawn with salted egg sauce.',
                 'price' => 20000,
-                'image' => 'shrimp.webp',
+                'image' => 'shrimp 2.webp',
             ],
             [
                 'category' => 'Non-Coffee',
@@ -55,7 +55,7 @@ class Product extends Seeder
                 'name' => 'Matcha Latte 2',
                 'desc'  => 'Matcha latte with beautiful latte art.',
                 'price' => 20000,
-                'image' => 'matcha latte.webp',
+                'image' => 'matcha latte 2.webp',
             ],
             [
                 'category' => 'Coffee',
@@ -63,7 +63,7 @@ class Product extends Seeder
                 'name' => 'Latte 3',
                 'desc'  => 'Coffee latte with beautiful latte art.',
                 'price' => 15000,
-                'image' => 'latte.webp',
+                'image' => 'latte 3.webp',
             ],
             [
                 'category' => 'Main Course',
@@ -71,7 +71,15 @@ class Product extends Seeder
                 'name' => 'Prawn Salted Egg 3',
                 'desc'  => 'Fried prawn with salted egg sauce.',
                 'price' => 20000,
-                'image' => 'shrimp.webp',
+                'image' => 'shrimp 3.webp',
+            ],
+            [
+                'category' => 'Non-Coffee',
+                'status' => 'Available',
+                'name' => 'Matcha Latte 3',
+                'desc'  => 'Matcha latte with beautiful latte art.',
+                'price' => 20000,
+                'image' => 'matcha latte 3.webp',
             ],
         ];
 
