@@ -52,4 +52,9 @@ class ProductModel extends Model
     {
         return $this->delete($id);
     }
+
+    public function createProduct($data)
+    {
+        return $this->insert($data);
+    }
 }

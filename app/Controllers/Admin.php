@@ -35,7 +35,40 @@ class Admin extends BaseController
 
     public function newProduct()
     {
-        return view('templates/header')
+        $productModel = model(ProductModel::class);
+        $data['selected'] = 'product';
+
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'name' => 'required',
+            'price' => 'required',
+            'desc' => 'required',
+            'category' => 'required',
+            'stock' => 'required',
+            'image' => 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[image,4096]'
+        ]);
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid) {
+            $imageUpload = $this->request->getFile('image');
+            $path = '../public/images/uploads';
+            $imageUpload->move(WRITEPATH . $path);
+
+            $productData = array(
+                'status' => empty($this->request->getPost('status')) ? 'Waiting' : $this->request->getPost('status'),
+                'category' => $this->request->getPost('category'),
+                'name'  => $this->request->getPost('name'),
+                'price' => $this->request->getPost('price'),
+                'stock' => $this->request->getPost('stock'),
+                'desc' => $this->request->getPost('desc'),
+                'image' => $imageUpload->getName(),
+            );
+
+            $productModel->createProduct($productData);
+            return redirect('admin/product')->with('success', 'Product created');
+        }
+
+        return view('templates/header', $data)
             . view('templates/admin/sidebar')
             . view('pages/admin/newProduct')
             . view('templates/tail');
