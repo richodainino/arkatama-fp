@@ -96,6 +96,18 @@ class Admin extends BaseController
             . view('templates/tail');
     }
 
+    public function deleteProduct($id)
+    {
+        $productModel = model(ProductModel::class);
+        $product = $productModel->getProduct($id);
+        $productModel->deleteProduct($id);
+        $image = $product['image'];
+        $path = '../public/images/upload';
+        @unlink($path . $image);
+
+        return redirect('admin/product')->with('success', 'Product deleted');
+    }
+
     public function hero()
     {
         $heroModel = model(ProductModel::class);

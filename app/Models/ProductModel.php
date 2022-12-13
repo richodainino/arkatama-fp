@@ -47,4 +47,9 @@ class ProductModel extends Model
     {
         return $this->update($id, $data);
     }
+
+    public function deleteProduct($id)
+    {
+        return $this->delete($id);
+    }
 }

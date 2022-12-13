@@ -98,7 +98,7 @@
                             Go Back
                         </a>
 
-                        <a class="flex items-center justify-center rounded-lg border bg-red-700 shadow-sm inline-block px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:relative" href="/admin/product/1/delete">
+                        <a class="flex items-center justify-center rounded-lg border bg-red-700 shadow-sm inline-block px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:relative" href="/admin/product/<?= esc($product['id']) ?>/delete">
                             Delete Product
                         </a>
                     </div>
