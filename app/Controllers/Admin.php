@@ -47,7 +47,6 @@ class Admin extends BaseController
         $product = $productModel->getProduct($id);
         $data['product'] = $product;
         $data['selected'] = 'product';
-        $reqBody = $this->request;
 
         $validation = \Config\Services::validation();
         $validation->setRules([
@@ -57,7 +56,7 @@ class Admin extends BaseController
             'category' => 'required',
             'stock' => 'required',
         ]);
-        $isDataValid = $validation->withRequest($reqBody)->run();
+        $isDataValid = $validation->withRequest($this->request)->run();
 
         if ($isDataValid) {
             $imageUpload = $this->request->getFile('image');
