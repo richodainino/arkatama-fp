@@ -108,7 +108,7 @@
                         <?php foreach ($product as $idx => $product_item) : ?>
                             <tr>
                                 <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    <?= esc($product_item['id']) ?>
+                                    <?php printf("%02d", esc($product_item['id'])) ?>
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
                                     <img src="<?= base_url("images/uploads/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" class="h-16 object-cover transition duration-500 group-hover:scale-105" />
