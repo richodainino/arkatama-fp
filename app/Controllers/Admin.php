@@ -76,7 +76,7 @@ class Admin extends BaseController
                     'image' => $imageUpload->getName(),
                 );
             } else {
-                $data = array(
+                $productData = array(
                     'status' => empty($this->request->getPost('status')) ? $product['status'] : $this->request->getPost('status'),
                     'category' => $this->request->getPost('category'),
                     'name'  => $this->request->getPost('name'),
@@ -85,7 +85,7 @@ class Admin extends BaseController
                     'desc' => $this->request->getPost('desc')
                 );
             }
-            $productModel->updateProduct($id, $data);
+            $productModel->updateProduct($id, $productData);
             return redirect('admin/product')->with('success', 'Product updated');
         }
 
