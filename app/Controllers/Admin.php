@@ -87,7 +87,7 @@ class Admin extends BaseController
                 );
             }
             $productModel->updateProduct($id, $data);
-            return redirect('admin/product');
+            return redirect('admin/product')->with('success', 'Product updated');
         }
 
         return view('templates/header', $data)

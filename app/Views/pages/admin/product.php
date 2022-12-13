@@ -1,5 +1,35 @@
 <!-- Content -->
 <div class="bg-white col-span-3 min-h-screen">
+    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+        <div class="absolute right-0 top-0 p-8 max-w-sm dark:bg-gray-900">
+            <div id="successAlert" role="alert" class="bg-white rounded-xl border border-gray-100 p-4 shadow-xl">
+                <div class="flex items-center gap-4">
+                    <span class="text-green-600 my-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+
+                    <div class="flex-1">
+                        <strong class="block font-medium text-gray-900"> Success </strong>
+
+                        <p class="mt-1 text-sm text-gray-700">
+                            <?php echo session()->getFlashdata('success'); ?>
+                        </p>
+                    </div>
+
+                    <button class="text-gray-500 transition hover:text-gray-600" data-dismiss-target="#successAlert" aria-label="Close">
+                        <span class="sr-only">Dismiss popup</span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <?php endif ?>
+
     <div class="grid px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header class="mb-6">
             <h2 class="text-xl font-bold text-brown sm:text-3xl">
@@ -8,7 +38,7 @@
         </header>
 
         <span class="inline-flex">
-            <a class="rounded-md border bg-white shadow-sm mb-4 inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:relative" href="/admin/product/new">
+            <a class="rounded-md border bg-brown-md shadow-sm mb-4 px-4 py-3 text-sm font-medium text-white hover:bg-brown" href="/admin/product/new">
                 Create New Product
             </a>
         </span>
