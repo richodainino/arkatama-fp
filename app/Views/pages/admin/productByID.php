@@ -1,5 +1,5 @@
 <?php if (!empty($product)) : ?>
-    <section class="col-span-3 bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8 h-full">
+    <section class="col-span-3 bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-8 min-h-screen">
         <div class="w-2/3">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="flex place-content-between">
@@ -86,7 +86,7 @@
 
                     <label class="block mt-4 mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Change Product Image</label>
                     <input name="image" aria-describedby="file_input_help" id="file_input" type="file" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
-                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">JPG, JPEG, PNG, or GIF.</p>
+                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">Maximum image size is 4mb with file extension JPG, JPEG, PNG, GIF, or WEBP.</p>
 
                     <!-- Send Button -->
                     <div class="mt-6 flex gap-4">

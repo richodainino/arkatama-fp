@@ -51,8 +51,8 @@ class Admin extends BaseController
 
         if ($isDataValid) {
             $imageUpload = $this->request->getFile('image');
-            $path = '../public/images/uploads';
-            $imageUpload->move(WRITEPATH . $path);
+            $path = FCPATH . 'images/uploads/';
+            $imageUpload->move($path);
 
             $productData = array(
                 'status' => empty($this->request->getPost('status')) ? 'Waiting' : $this->request->getPost('status'),
@@ -92,14 +92,15 @@ class Admin extends BaseController
         $isDataValid = $validation->withRequest($this->request)->run();
 
         if ($isDataValid) {
-            $imageUpload = $this->request->getFile('image');
-
-            if ($imageUpload->isValid()) {
-                $path = '../public/images/uploads';
+            $isImageValid = $validation->check('image', 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[image,4096]');
+            
+            if ($isImageValid) {
+                $imageUpload = $this->request->getFile('image');
+                $path = FCPATH . 'images/uploads/';
                 $image = $product["image"];
-                @unlink($path . $image);
-                $imageUpload->move(WRITEPATH . $path);
-                $data = array(
+                unlink($path . $image);
+                $imageUpload->move($path);
+                $productData = array(
                     'status' => empty($this->request->getPost('status')) ? $product['status'] : $this->request->getPost('status'),
                     'category' => $this->request->getPost('category'),
                     'name'  => $this->request->getPost('name'),
@@ -118,6 +119,7 @@ class Admin extends BaseController
                     'desc' => $this->request->getPost('desc')
                 );
             }
+            
             $productModel->updateProduct($id, $productData);
             return redirect('admin/product')->with('success', 'Product updated');
         }
