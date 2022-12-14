@@ -136,8 +136,8 @@ class Admin extends BaseController
         $product = $productModel->getProduct($id);
         $path = FCPATH . 'uploads/product/';
         $image = $product["image"];
-        $productModel->deleteProduct($id);
         unlink($path . $image);
+        $productModel->deleteProduct($id);
 
         return redirect('admin/product')->with('success', 'Product deleted');
     }
@@ -241,7 +241,7 @@ class Admin extends BaseController
             . view('templates/tail');
     }
 
-    public function deleteHero($id)
+public function deleteHero($id)
     {
         $heroModel = model(HeroModel::class);
         $hero = $heroModel->getHero('all', $id);

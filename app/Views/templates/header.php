@@ -36,4 +36,4 @@
 	</script>
 </head>
 
-<body class="bg-brown">
+<body>
