@@ -157,10 +157,38 @@ class Admin extends BaseController
 
     public function newHero()
     {
-        return view('templates/header')
-        . view('templates/admin/sidebar')
-        . view('pages/admin/newHero')
-        . view('templates/tail');
+        $heroModel = model(HeroModel::class);
+        $data['selected'] = 'hero';
+
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'title' => 'required',
+            'image' => 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[image,4096]'
+        ]);
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid) {
+            $imageUpload = $this->request->getFile('image');
+            $path = FCPATH . 'uploads/hero/';
+            $imageUpload->move($path);
+
+            $heroData = array(
+                'status' => empty($this->request->getPost('status')) ? 'Waiting' : $this->request->getPost('status'),
+                'title'  => $this->request->getPost('title'),
+                'desc'  => $this->request->getPost('desc'),
+                'cta_title'  => $this->request->getPost('cta-title'),
+                'cta_ref'  => $this->request->getPost('cta-ref'),
+                'image' => $imageUpload->getName(),
+            );
+
+            $heroModel->createHero($heroData);
+            return redirect('admin/hero')->with('success', 'Hero created');
+        }
+
+        return view('templates/header', $data)
+            . view('templates/admin/sidebar')
+            . view('pages/admin/newHero')
+            . view('templates/tail');
     }
 
     public function heroByID($id)

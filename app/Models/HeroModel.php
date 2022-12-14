@@ -16,4 +16,9 @@ class HeroModel extends Model
 
         return $this->where(['status' => $status])->findAll();
     }
+
+    public function createHero($data)
+    {
+        return $this->insert($data);
+    }
 }
