@@ -144,8 +144,8 @@ class Admin extends BaseController
 
     public function hero()
     {
-        $heroModel = model(ProductModel::class);
-        $hero = $heroModel->getProduct();
+        $heroModel = model(HeroModel::class);
+        $hero = $heroModel->getHero();
         $data['hero'] = $hero;
         $data['selected'] = 'hero';
 
