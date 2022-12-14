@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\HeroModel;
 use App\Models\ProductModel;
 
-class Home extends BaseController
+class User extends BaseController
 {
     public function index()
     {
@@ -20,6 +20,19 @@ class Home extends BaseController
         return view('templates/header', $data)
             . view('templates/user/navbar')
             . view('pages/user/home')
+            . view('templates/user/footer')
+            . view('templates/tail');
+    }
+
+    public function menu()
+    {
+        $productModel = model(ProductModel::class);
+        $product = $productModel->getProduct();
+        $data['product'] = $product;
+
+        return view('templates/header', $data)
+            . view('templates/user/navbar')
+            . view('pages/user/menu')
             . view('templates/user/footer')
             . view('templates/tail');
     }
