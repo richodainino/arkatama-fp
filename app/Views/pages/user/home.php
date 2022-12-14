@@ -79,7 +79,7 @@
 					<li>
 						<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
 							<a href="/menu/<?= esc($product_item['id']) ?>">
-								<img class="rounded-t-lg" src="<?= base_url("images/uploads/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
+								<img class="rounded-t-lg" src="<?= base_url("uploads/product/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
 							</a>
 							<div class="p-5">
 								<a href="/menu/<?= esc($product_item['id']) ?>">

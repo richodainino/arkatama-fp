@@ -51,7 +51,7 @@ class Admin extends BaseController
 
         if ($isDataValid) {
             $imageUpload = $this->request->getFile('image');
-            $path = FCPATH . 'images/uploads/';
+            $path = FCPATH . 'uploads/product/';
             $imageUpload->move($path);
 
             $productData = array(
@@ -93,10 +93,10 @@ class Admin extends BaseController
 
         if ($isDataValid) {
             $isImageValid = $validation->check('image', 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[image,4096]');
-            
+
             if ($isImageValid) {
                 $imageUpload = $this->request->getFile('image');
-                $path = FCPATH . 'images/uploads/';
+                $path = FCPATH . 'uploads/product/';
                 $image = $product["image"];
                 unlink($path . $image);
                 $imageUpload->move($path);
@@ -119,7 +119,7 @@ class Admin extends BaseController
                     'desc' => $this->request->getPost('desc')
                 );
             }
-            
+
             $productModel->updateProduct($id, $productData);
             return redirect('admin/product')->with('success', 'Product updated');
         }
@@ -135,9 +135,9 @@ class Admin extends BaseController
         $productModel = model(ProductModel::class);
         $product = $productModel->getProduct($id);
         $productModel->deleteProduct($id);
-        $image = $product['image'];
-        $path = '../public/images/upload';
-        @unlink($path . $image);
+        $path = FCPATH . 'uploads/product/';
+        $image = $product["image"];
+        unlink($path . $image);
 
         return redirect('admin/product')->with('success', 'Product deleted');
     }
