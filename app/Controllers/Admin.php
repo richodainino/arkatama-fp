@@ -191,12 +191,49 @@ class Admin extends BaseController
             . view('templates/tail');
     }
 
-    public function heroByID($id)
+    public function updateHero($id)
     {
-        $heroModel = model(ProductModel::class);
-        $hero = $heroModel->getProduct($id);
+        $heroModel = model(HeroModel::class);
+        $hero = $heroModel->getHero('all', $id);
         $data['hero'] = $hero;
         $data['selected'] = 'hero';
+
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'title' => 'required',
+        ]);
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        if ($isDataValid) {
+            $isImageValid = $validation->check('image', 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/gif,image/png,image/webp]|max_size[image,4096]');
+
+            if ($isImageValid) {
+                $imageUpload = $this->request->getFile('image');
+                $path = FCPATH . 'uploads/hero/';
+                $image = $hero["image"];
+                unlink($path . $image);
+                $imageUpload->move($path);
+                $heroData = array(
+                    'status' => empty($this->request->getPost('status')) ? $hero['status'] : $this->request->getPost('status'),
+                    'title'  => $this->request->getPost('title'),
+                    'desc'  => $this->request->getPost('desc'),
+                    'cta_title'  => $this->request->getPost('cta-title'),
+                    'cta_ref'  => $this->request->getPost('cta-ref'),
+                    'image' => $imageUpload->getName(),
+                );
+            } else {
+                $heroData = array(
+                    'status' => empty($this->request->getPost('status')) ? $hero['status'] : $this->request->getPost('status'),
+                    'title'  => $this->request->getPost('title'),
+                    'desc'  => $this->request->getPost('desc'),
+                    'cta_title'  => $this->request->getPost('cta-title'),
+                    'cta_ref'  => $this->request->getPost('cta-ref'),
+                );
+            }
+
+            $heroModel->updateHero($id, $heroData);
+            return redirect('admin/hero')->with('success', 'Hero updated');
+        }
 
         return view('templates/header', $data)
             . view('templates/admin/sidebar')
