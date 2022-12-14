@@ -49,7 +49,7 @@ $routes->group('admin', function($routes){
     $routes->get('hero', 'Admin::hero');
     $routes->add('hero/new', 'Admin::newHero');
     $routes->add('hero/(:num)/update', 'Admin::updateHero/$1');
-    $routes->get('hero/(:num)/detete', 'Admin::deleteHero/$1');
+    $routes->get('hero/(:num)/delete', 'Admin::deleteHero/$1');
 });
 // $routes->get('(:any)', 'Pages::view/$1');
 

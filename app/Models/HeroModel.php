@@ -45,4 +45,9 @@ class HeroModel extends Model
     {
         return $this->update($id, $data);
     }
+
+    public function deleteHero($id)
+    {
+        return $this->delete($id);
+    }
 }

@@ -134,9 +134,9 @@ class Admin extends BaseController
     {
         $productModel = model(ProductModel::class);
         $product = $productModel->getProduct($id);
-        $productModel->deleteProduct($id);
         $path = FCPATH . 'uploads/product/';
         $image = $product["image"];
+        $productModel->deleteProduct($id);
         unlink($path . $image);
 
         return redirect('admin/product')->with('success', 'Product deleted');
@@ -239,5 +239,17 @@ class Admin extends BaseController
             . view('templates/admin/sidebar')
             . view('pages/admin/heroByID')
             . view('templates/tail');
+    }
+
+    public function deleteHero($id)
+    {
+        $heroModel = model(HeroModel::class);
+        $hero = $heroModel->getHero('all', $id);
+        $path = FCPATH . 'uploads/hero/';
+        $image = $hero["image"];
+        unlink($path . $image);
+        $heroModel->deleteHero($id);
+
+        return redirect('admin/hero')->with('success', 'Hero deleted');
     }
 }
