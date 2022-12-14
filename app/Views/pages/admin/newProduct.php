@@ -4,7 +4,7 @@
                 <div class="flex place-content-between">
                     <header class="mb-6">
                         <h2 class="text-xl font-bold text-brown sm:text-3xl">
-                            Edit Product
+                            Create a New Product
                         </h2>
                     </header>
 
