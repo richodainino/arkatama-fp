@@ -23,7 +23,7 @@
 
         <div class="sticky bottom-0 border-t border-gray-100">
             <a href="#" class="flex shrink-0 items-center bg-white p-4 hover:bg-gray-50">
-                <img alt="Man" src="<?= base_url('/images/foto richo.jpeg') ?>" class="h-10 w-10 rounded-full object-cover" />
+                <img alt="Man" src="<?= base_url("images/foto richo.jpeg") ?>" class="h-10 w-10 rounded-full object-cover" />
 
                 <div class="ml-1.5">
                     <p class="text-xs">
