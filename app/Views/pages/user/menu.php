@@ -232,13 +232,16 @@
 
     const productUrl = "<?= base_url("uploads/product") ?>/";
     const product = <?= json_encode($product) ?>;
-    var sortedProduct = product;
+    var sortedProduct = product.filter(el => {
+        return el.status === "Approved"
+    });
+    console.log(sortedProduct);
 
     function setSortBy(option) {
         var value = option.value;
         switch (value) {
             case 1:
-                
+
                 break;
 
             default:
