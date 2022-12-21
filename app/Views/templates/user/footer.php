@@ -1,7 +1,7 @@
 <footer aria-label="Site Footer" class="bg-gray-100">
     <div class="mx-auto max-w-5xl px-4 pb-10 sm:px-6 lg:px-8">
         <div class="flex justify-center text-brown">
-            <img class="h-48" src="<?= base_url("images/caribu coklat.png") ?>">
+            <img class="h-48" src="<?= base_url("public/images/caribu coklat.png") ?>">
         </div>
 
         <ul class="flex justify-center gap-6 md:gap-8">

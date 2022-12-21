@@ -38,6 +38,12 @@ $routes->set404Override();
 $routes->get('/', 'User::index');
 $routes->get('menu', 'User::menu');
 
+$routes->add('login', 'Auth::login');
+$routes->add('valid_login', 'Auth::valid_login');
+$routes->add('register', 'Auth::register');
+$routes->add('valid_register', 'Auth::valid_register');
+$routes->get('logout', 'Auth::logout');
+
 $routes->group('admin', function($routes){
     $routes->get('/', 'Admin::index');
     $routes->get('dashboard', 'Admin::dashboard');

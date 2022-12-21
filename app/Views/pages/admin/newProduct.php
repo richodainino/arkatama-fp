@@ -8,6 +8,10 @@
                         </h2>
                     </header>
 
+                    <?php 
+                    $session = session();
+                    if ($session->get('role') === "manager") {
+                    ?>
                     <div class="text-center flex flex-row gap-4">
                         <div>
                             <input type="radio" name="status" value="Approved" id="approved" class="peer hidden" />
@@ -25,6 +29,7 @@
                             </label>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
 
                 <div class="rounded-lg">

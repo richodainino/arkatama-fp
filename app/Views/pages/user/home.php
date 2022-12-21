@@ -5,7 +5,7 @@
 		<div class="relative h-56 overflow-hidden md:h-screen">
 			<?php foreach ($hero as $hero_item) : ?>
 				<div class="hidden duration-1000 ease-in-out" data-carousel-item>
-					<div class="relative bg-[url(<?= base_url("uploads/product/" . esc($hero_item['image'])) ?>)] bg-cover bg-center bg-no-repeat">
+					<div class="relative bg-[url(<?= base_url("public/uploads/product/" . esc($hero_item['image'])) ?>)] bg-cover bg-center bg-no-repeat">
 						<div class="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/5"></div>
 
 						<div class="relative mx-auto max-w-screen-xl px-8 py-32 sm:px-12 lg:flex lg:h-screen lg:items-center lg:px-16">
@@ -79,7 +79,7 @@
 					<li>
 						<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
 							<a href="/menu/<?= esc($product_item['id']) ?>">
-								<img class="rounded-t-lg" src="<?= base_url("uploads/product/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
+								<img class="rounded-t-lg" src="<?= base_url("public/uploads/product/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" />
 							</a>
 							<div class="p-5">
 								<a href="/menu/<?= esc($product_item['id']) ?>">

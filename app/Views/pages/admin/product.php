@@ -111,7 +111,7 @@
                                     <?php printf("%02d", esc($product_item['id'])) ?>
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                    <img src="<?= base_url("uploads/product/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" class="h-16 object-cover transition duration-500 group-hover:scale-105" />
+                                    <img src="<?= base_url("public/uploads/product/" . esc($product_item['image'])) ?>" alt="Image of a <?= esc($product_item['name']) ?>" class="h-16 object-cover transition duration-500 group-hover:scale-105" />
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
                                     <?= esc($product_item['name']) ?>

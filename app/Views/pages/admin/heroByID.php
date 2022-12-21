@@ -9,23 +9,28 @@
                         </h2>
                     </header>
 
-                    <div class="text-center flex flex-row gap-4">
-                        <div>
-                            <input <?php if ($hero['status'] === 'Approved') echo ('checked') ?> type="radio" name="status" value="Approved" id="approved" class="peer hidden" />
+                    <?php
+                    $session = session();
+                    if ($session->get('role') === "manager") {
+                    ?>
+                        <div class="text-center flex flex-row gap-4">
+                            <div>
+                                <input <?php if ($hero['status'] === 'Approved') echo ('checked') ?> type="radio" name="status" value="Approved" id="approved" class="peer hidden" />
 
-                            <label for="approved" class="block cursor-pointer rounded-lg border border-green-100 p-2 text-sm font-medium shadow-sm hover:border-green-200 peer-checked:border-green-500 peer-checked:ring-1 peer-checked:ring-green-500 peer-checked:bg-green-100">
-                                <p class="text-green-700">Approved</p>
-                            </label>
+                                <label for="approved" class="block cursor-pointer rounded-lg border border-green-100 p-2 text-sm font-medium shadow-sm hover:border-green-200 peer-checked:border-green-500 peer-checked:ring-1 peer-checked:ring-green-500 peer-checked:bg-green-100">
+                                    <p class="text-green-700">Approved</p>
+                                </label>
+                            </div>
+
+                            <div>
+                                <input <?php if ($hero['status'] === 'Not Approved') echo ('checked') ?> type="radio" name="status" value="Not Approved" id="not-approved" class="peer hidden" />
+
+                                <label for="not-approved" class="block cursor-pointer rounded-lg border border-red-100 p-2 text-sm font-medium shadow-sm hover:border-red-200 peer-checked:border-red-500 peer-checked:ring-1 peer-checked:ring-red-500 peer-checked:bg-red-100">
+                                    <p class="text-red-700">Not Approved</p>
+                                </label>
+                            </div>
                         </div>
-
-                        <div>
-                            <input <?php if ($hero['status'] === 'Not Approved') echo ('checked') ?> type="radio" name="status" value="Not Approved" id="not-approved" class="peer hidden" />
-
-                            <label for="not-approved" class="block cursor-pointer rounded-lg border border-red-100 p-2 text-sm font-medium shadow-sm hover:border-red-200 peer-checked:border-red-500 peer-checked:ring-1 peer-checked:ring-red-500 peer-checked:bg-red-100">
-                                <p class="text-red-700">Not Approved</p>
-                            </label>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
 
                 <div class="rounded-lg">
@@ -57,7 +62,7 @@
 
                     <!-- Image -->
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Hero Image</label>
-                    <img src="<?= base_url("uploads/hero/" . esc($hero['image'])) ?>" alt="Image of a hero" class="h-48 object-cover transition duration-500 group-hover:scale-105" />
+                    <img src="<?= base_url("public/uploads/hero/" . esc($hero['image'])) ?>" alt="Image of a hero" class="h-48 object-cover transition duration-500 group-hover:scale-105" />
 
                     <label class="block mt-4 mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Change Hero Image</label>
                     <input name="image" aria-describedby="file_input_help" id="file_input" type="file" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">

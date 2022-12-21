@@ -6,15 +6,34 @@ use App\Models\ProductModel;
 
 class Admin extends BaseController
 {
+    public function __construct()
+    {
+        $this->session = session();
+    }
+
     public function index()
     {
-        return view('templates/header')
-            . view('pages/admin/login')
-            . view('templates/tail');
+        if (!$this->session->has('isLogin')) {
+            return redirect()->to('/login');
+        }
+
+        if ($this->session->get('role') === "user") {
+            return redirect()->to('/');
+        }
+
+        return redirect()->to('/admin/dashboard');
     }
 
     public function dashboard()
     {
+        if (!$this->session->has('isLogin')) {
+            return redirect()->to('/login');
+        }
+
+        if ($this->session->get('role') === "user") {
+            return redirect()->to('/');
+        }
+
         return view('templates/header')
             . view('pages/admin/dashboard')
             . view('templates/tail');
@@ -22,6 +41,14 @@ class Admin extends BaseController
 
     public function product()
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $productModel = model(ProductModel::class);
         $product = $productModel->getProduct();
         $data['product'] = $product;
@@ -35,6 +62,14 @@ class Admin extends BaseController
 
     public function newProduct()
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $productModel = model(ProductModel::class);
         $data['selected'] = 'product';
 
@@ -76,6 +111,14 @@ class Admin extends BaseController
 
     public function updateProduct($id)
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $productModel = model(ProductModel::class);
         $product = $productModel->getProduct($id);
         $data['product'] = $product;
@@ -132,6 +175,14 @@ class Admin extends BaseController
 
     public function deleteProduct($id)
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $productModel = model(ProductModel::class);
         $product = $productModel->getProduct($id);
         $path = FCPATH . 'uploads/product/';
@@ -144,6 +195,14 @@ class Admin extends BaseController
 
     public function hero()
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $heroModel = model(HeroModel::class);
         $hero = $heroModel->getHero();
         $data['hero'] = $hero;
@@ -193,6 +252,14 @@ class Admin extends BaseController
 
     public function updateHero($id)
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $heroModel = model(HeroModel::class);
         $hero = $heroModel->getHero('all', $id);
         $data['hero'] = $hero;
@@ -243,6 +310,14 @@ class Admin extends BaseController
 
 public function deleteHero($id)
     {
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/login');
+        }
+        
+        if($this->session->get('role') === "user"){
+            return redirect()->to('/');
+        }
+
         $heroModel = model(HeroModel::class);
         $hero = $heroModel->getHero('all', $id);
         $path = FCPATH . 'uploads/hero/';

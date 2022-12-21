@@ -108,7 +108,7 @@
                                     <?php printf("%02d", esc($hero_item['id'])) ?>
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                    <img src="<?= base_url("uploads/hero/" . esc($hero_item['image'])) ?>" alt="Image of a hero" class="h-16 object-cover transition duration-500 group-hover:scale-105" />
+                                    <img src="<?= base_url("public/uploads/hero/" . esc($hero_item['image'])) ?>" alt="Image of a hero" class="h-16 object-cover transition duration-500 group-hover:scale-105" />
                                 </td>
                                 <td class="whitespace-nowrap px-4 py-2 text-gray-700 truncate">
                                     <?= esc($hero_item['title']) ?>
