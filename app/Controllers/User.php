@@ -49,12 +49,16 @@ class User extends BaseController
         }
 
         $productModel = model(ProductModel::class);
-        $product = $productModel->getProduct();
+        $product = $productModel->getProduct($id);
         $data['product'] = $product;
+
+        if (empty($data['product'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the menu item');
+        }
 
         return view('templates/header', $data)
             . view('templates/user/navbar')
-            . view('pages/user/menu')
+            . view('pages/user/specificMenu')
             . view('templates/user/footer')
             . view('templates/tail');
     }

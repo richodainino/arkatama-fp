@@ -24,10 +24,12 @@
 
                     <select id="SortBy" onchange="setSortBy(this)" class="mt-1 text-sm border-gray-300 rounded">
                         <option value="0">Default</option>
-                        <option value="1">Title, DESC</option>
+                        <option value="6">Stock, ASC</option>
+                        <option value="5">Stock, DESC</option>
                         <option value="2">Title, ASC</option>
-                        <option value="3">Price, DESC</option>
+                        <option value="1">Title, DESC</option>
                         <option value="4">Price, ASC</option>
+                        <option value="3">Price, DESC</option>
                     </select>
                 </div>
 
@@ -171,7 +173,7 @@
 
     const productUrl = "<?= base_url("uploads/product") ?>/";
     const product = <?= json_encode($product) ?>;
-    var approvedProduct = product.filter(el => {
+    const approvedProduct = product.filter(el => {
         return el.status === "Approved"
     });
     var filteredProduct, sortedProduct, filteredPriceProduct = null;
@@ -214,7 +216,20 @@
             p.innerHTML = rupiah(product[key].price);
 
             cardText.append(cardA, p);
-            card.append(cardImage, cardText);
+
+            if (product[key].stock === "Out of Stock") {
+                card.className = "relative max-w-sm bg-gray-200 border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700";
+                cardImage.className = "opacity-50";
+                cardText.className = "px-5 pb-4 pt-2 opacity-50";
+
+                var outOfStock = document.createElement("p");
+                outOfStock.innerHTML = "Out of Stock";
+                outOfStock.className = "absolute top-24 left-1/2 -translate-y-1/2 -translate-x-1/2 text-2xl font-bold text-black rounded-lg";
+                card.append(cardImage, cardText, outOfStock);
+            } else {
+                card.append(cardImage, cardText);
+            }
+
             li.appendChild(card);
             ul.appendChild(li);
         }
@@ -224,11 +239,11 @@
 
     function setSortBy(option) {
         if (!filteredProduct && !filteredPriceProduct) {
-            sortedProduct = approvedProduct;
+            sortedProduct = approvedProduct.slice();
         } else if (filteredPriceProduct) {
-            sortedProduct = filteredPriceProduct;
+            sortedProduct = filteredPriceProduct.slice();
         } else {
-            sortedProduct = filteredProduct;
+            sortedProduct = filteredProduct.slice();
         }
         var value = parseInt(option.value);
         switch (value) {
@@ -256,6 +271,18 @@
                 });
                 break;
 
+            case 5:
+                sortedProduct = sortedProduct.sort((a, b) => {
+                    return b.stock.localeCompare(a.stock);
+                });
+                break;
+
+            case 6:
+                sortedProduct = sortedProduct.sort((a, b) => {
+                    return a.stock.localeCompare(b.stock);
+                });
+                break;
+
             default:
                 sortedProduct = null;
                 break;
@@ -265,11 +292,11 @@
 
     function setFilterBy(option) {
         if (!sortedProduct && !filteredPriceProduct) {
-            filteredProduct = approvedProduct;
+            filteredProduct = approvedProduct.slice();
         } else if (sortedProduct) {
-            filteredProduct = sortedProduct;
+            filteredProduct = sortedProduct.slice();
         } else {
-            filteredProduct = filteredPriceProduct;
+            filteredProduct = filteredPriceProduct.slice();
         }
         switch (option) {
             case 1:
@@ -317,11 +344,11 @@
 
     function setPriceBy(min = 0, max = 1000000) {
         if (!filteredProduct && !sortedProduct) {
-            filteredPriceProduct = approvedProduct;
+            filteredPriceProduct = approvedProduct.slice();
         } else if (filteredProduct) {
-            filteredPriceProduct = filteredProduct;
+            filteredPriceProduct = filteredProduct.slice();
         } else {
-            filteredPriceProduct = sortedProduct;
+            filteredPriceProduct = sortedProduct.slice();
         }
         filteredPriceProduct = filteredPriceProduct.filter(el => {
             return el.price >= min && el.price <= max;

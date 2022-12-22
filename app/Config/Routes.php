@@ -37,6 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'User::index');
 $routes->get('menu', 'User::menu');
+$routes->get('menu/(:num)', 'User::specificMenu/$1');
 
 $routes->add('login', 'Auth::login');
 $routes->add('valid_login', 'Auth::valid_login');
