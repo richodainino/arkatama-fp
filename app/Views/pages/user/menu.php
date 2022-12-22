@@ -169,7 +169,7 @@
         }).format(number);
     }
 
-    const productUrl = "<?= base_url("public/uploads/product") ?>/";
+    const productUrl = "<?= base_url("uploads/product") ?>/";
     const product = <?= json_encode($product) ?>;
     var approvedProduct = product.filter(el => {
         return el.status === "Approved"

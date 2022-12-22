@@ -4,7 +4,7 @@
             <div class="flex-1 md:flex md:items-center md:gap-12">
                 <a class="block text-brown" href="/">
                     <span class="sr-only">Home</span>
-                    <img class="h-28 drop-shadow-3xl" src="<?= base_url("public/images/caribu lingkaran.png") ?>">
+                    <img class="h-28 drop-shadow-3xl" src="<?= base_url("images/caribu lingkaran.png") ?>">
                 </a>
             </div>
 
@@ -17,7 +17,7 @@
                             </a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a class="text-white transition hover:text-white/75" href="/about">
                                 About
                             </a>
@@ -27,7 +27,7 @@
                             <a class="text-white transition hover:text-white/75" href="/about#location">
                                 Location
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
 

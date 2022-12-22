@@ -62,7 +62,7 @@
 
                     <!-- Image -->
                     <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Hero Image</label>
-                    <img src="<?= base_url("public/uploads/hero/" . esc($hero['image'])) ?>" alt="Image of a hero" class="h-48 object-cover transition duration-500 group-hover:scale-105" />
+                    <img src="<?= base_url("uploads/hero/" . esc($hero['image'])) ?>" alt="Image of a hero" class="h-48 object-cover transition duration-500 group-hover:scale-105" />
 
                     <label class="block mt-4 mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Change Hero Image</label>
                     <input name="image" aria-describedby="file_input_help" id="file_input" type="file" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
